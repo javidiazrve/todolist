@@ -1,0 +1,26 @@
+<ion-content>
+    <div id="divBotones">
+        <ion-button id="btnSalir" fill="clear" (click)="irAtras()">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+        <ion-button id="btnBorrar" fill="clear" (click)="borrarProyecto()">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+    </div>
+    <div style="background: black;">
+        <ion-card id="cardToolbar" mode="ios">
+            <ion-card-header>
+                <ion-card-title>{{proyecto.titulo | titlecase}}</ion-card-title>
+                <ion-button [disabled]="btnsDisabled" id="btnEditar" fill="clear" (click)="editarTituloProyecto()">
+                    <ion-icon slot="icon-only" name="pencil"></ion-icon>
+                </ion-button>
+            </ion-card-header>
+        </ion-card>
+    </div>
+    <div id="divCardPrincipal">
+        <card-tarea-actual *ngIf="tareaActual" [btnsDisabled]="btnsDisabled" [tareaActual]="tareaActual" (actualizar)="actualizar()"></card-tarea-actual>
+        <card-proyecto-terminado *ngIf="proyectoTerminado()"></card-proyecto-terminado>
+        <card-tareas-vacias *ngIf="tareasCompletasVacio() && tareasPendientesVacio() && !tareaActual"></card-tareas-vacias>
+    </div>
+    <lista-tareas (actualizar)="actualizar()" (bloquearBtns)="bloquearBtns($event)" [completas]="tareasCompletas" [pendientes]="tareasPendientes" [tareaActual]="tareaActual"></lista-tareas>
+</ion-content>

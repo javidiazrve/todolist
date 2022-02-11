@@ -1,0 +1,37 @@
+ion-card {
+    background: #222428;
+    ion-card-header {
+        ion-card-title,
+        ion-card-subtitle {
+            color: white;
+        }
+        ion-card-title {
+            margin-top: 15px;
+        }
+        ion-card-subtitle {
+            font-weight: 800;
+        }
+        padding: 15px;
+    }
+    ion-card-content {
+        padding-left: 0;
+        padding-right: 0;
+        ion-row {
+            width: 100%;
+            ion-col {
+                text-align: center;
+                ion-button {
+                    width: 100%;
+                    --padding-start: 0;
+                    --padding-end: 0;
+                    height: 45px;
+                    --border-radius: 20px 5px 20px 5px
+                }
+                ion-icon {
+                    font-size: 30px;
+                    color: white;
+                }
+            }
+        }
+    }
+}

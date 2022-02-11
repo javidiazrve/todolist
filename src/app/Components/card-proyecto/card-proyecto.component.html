@@ -1,0 +1,25 @@
+<ion-card (click)="verProyecto(id)" class="animate__animated animate__fadeIn" mode="ios">
+    <ion-card-header>
+        <ion-card-title>{{proyecto.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <div id="divTareaPendiente" *ngIf="getTareaPendiente() || tareasVacias()">
+            <h1>Tarea Pendiente:</h1>
+            <h2 *ngIf="getTareaPendiente()">
+                <ion-icon name="time"></ion-icon> {{getTareaPendiente().titulo}}</h2>
+            <ion-label *ngIf="!getTareaPendiente()">
+                <h2 style="margin-bottom: 5px;">
+                    No hay tareas
+                </h2>
+                <h2>
+                    Empieza una y cumple la meta.
+                </h2>
+            </ion-label>
+        </div>
+        <div id="divBarra" *ngIf="!tareasVacias()">
+            <ion-label id="labelCompletado">Completado: </ion-label>
+            <ion-label id="labelPorciento">{{getPorcentajeCompleto(1)}}%</ion-label>
+            <ion-progress-bar [value]="getPorcentajeCompleto(0)" color="success"></ion-progress-bar>
+        </div>
+    </ion-card-content>
+</ion-card>

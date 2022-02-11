@@ -1,0 +1,61 @@
+#divCardPrincipal {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #161616;
+}
+
+#cardToolbar {
+    width: 100%;
+    margin: 0;
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: none;
+    background: #161616;
+    ion-card-header {
+        ion-card-title {
+            font-size: 35px;
+            font-weight: 600;
+            color: white;
+        }
+        #btnEditar {
+            margin: 0;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            ion-icon {
+                color: burlywood;
+            }
+        }
+    }
+}
+
+#divBotones {
+    background: black;
+    display: block;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    padding-top: 10px;
+    #btnSalir {
+        ion-icon {
+            color: white;
+            font-weight: 600;
+        }
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+    }
+    #btnBorrar {
+        ion-icon {
+            color: red;
+            font-weight: 600;
+        }
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+    }
+}
